@@ -1,0 +1,15 @@
+.PokesList {
+  background-color: rgb(44, 49, 49);
+  color: aliceblue;
+}
+
+.PokesGrid {
+  display: grid;
+  max-width: 80%;
+  margin: auto;
+  padding: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  /* background-color: aquamarine; */
+  list-style: none;
+}

@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import PokeDisplay from './PokeDisplay/PokeDisplay';
+import PokeFilter from './PokeFilter/PokeFilter';
+
 
 function App() {
   return (
     <div className="App">
-      PokeAPI
+      <PokeFilter />
+      <PokeDisplay />
     </div>
   );
 }

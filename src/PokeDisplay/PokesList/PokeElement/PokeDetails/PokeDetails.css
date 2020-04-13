@@ -1,0 +1,27 @@
+.PokeDetails {
+  background-color: rgb(90, 80, 77);
+  color: rgb(241, 188, 52);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.PokeName {
+  height: 40%;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.PokeSkills {
+  /* height: 60%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(107, 99, 97);
+  font-size: 20px;
+}
+
+
