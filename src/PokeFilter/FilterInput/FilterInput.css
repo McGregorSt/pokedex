@@ -1,0 +1,13 @@
+.FilterInput {
+
+}
+
+.FilterInput__input {
+  width: 800px;
+  height: 60px;
+  background-color: #999;
+  border-style: none;
+  border-bottom: 1px solid #555;
+  font-size: 50px;
+  font-weight: 100;
+}
