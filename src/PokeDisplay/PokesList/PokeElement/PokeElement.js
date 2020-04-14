@@ -12,22 +12,24 @@ class PokeElement extends Component {
   render() {
 
     let pokeElement = (
-      <div>
         <p>{this.props.name}</p>
-      </div>
     )
 
-    if (this.props.isClicked === this.props.pokeInd) {
+    if (this.props.clickedPoke === this.props.pokeInd) {
       pokeElement = (
         <PokeDetails 
           pokeName={this.props.name} 
-          mouseClick={this.props.mouseClick} 
-          details={this.props.details}
+          pokeDetails={this.props.pokeDetails}
+          isClicked={this.props.isClicked}
+          active={this.props.active}
           />
       )
     }
 
-    return <li className='PokeElm' onClick={this.props.clicked}>
+    return <li 
+              className={`PokeElm`} 
+              onClick={this.props.clicked}
+              >
       {pokeElement}
     </li>
   }

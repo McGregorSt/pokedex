@@ -8,8 +8,9 @@
   max-width: 80%;
   margin: auto;
   padding: 30px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   /* background-color: aquamarine; */
   list-style: none;
 }
+

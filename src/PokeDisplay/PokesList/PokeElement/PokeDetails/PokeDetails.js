@@ -13,23 +13,22 @@ class PokeDetails extends Component {
 
   showDetailsClicked = (details) => {
     switch (details) {
-      case 'abilities': return this.props.details.abilities
-      case 'stats': return this.props.details.stats
+      case 'abilities': return this.props.pokeDetails.abilities
+      case 'stats': return this.props.pokeDetails.stats
       default: return
     }
   }
 
   onDetailsClick = (e, ind) => {
     e.stopPropagation()
+
     const statsClicked = e.target.innerText.toLowerCase()
-    console.log(statsClicked)
     this.setState({ statsClicked: statsClicked })
+    
     if (ind !== null && !this.state.showDetails) {
       this.setState({ showDetails: !this.state.showDetails })
     }
-    console.log(this.showDetailsClicked(statsClicked))
     this.setState({ detailsToDisplay: this.showDetailsClicked(statsClicked)})
-    
   }
 
 
@@ -37,11 +36,11 @@ class PokeDetails extends Component {
     const details = [ 'abilities', 'stats']
 
     let pokeDetails = details.map((detail, ind) => {
-      return <div key={detail} onMouseEnter={this.props.mouseEnter} onClick={(e) => this.onDetailsClick(e, ind)}>{detail.toUpperCase()}</div>
+      return <div key={detail} onClick={(e) => this.onDetailsClick(e, ind)}>{detail.toUpperCase()}</div>
     })
 
     let pokeStats = ''
-
+    console.log(this.props.active)
     if (this.state.showDetails) {
       console.log('pokeStats')
       pokeStats = (
@@ -52,13 +51,13 @@ class PokeDetails extends Component {
       )
     }
     
-    return <div className='PokeDetails'>
-      <div className='PokeName'>
-        { this.props.pokeName }
-      </div>
-      <div className='PokeSkills' >
-        { pokeDetails }
-      </div>
+    return <div className={`PokeDetails ${this.props.active ? 'active' : ''}`}>
+        <div className='PokeName'>
+          { this.props.pokeName }
+        </div>
+        <div className='PokeSkills' >
+          { this.state.showDetails ? pokeStats : pokeDetails }
+        </div>
     </div>
   }
 }

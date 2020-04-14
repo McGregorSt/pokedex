@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import './PokesList.css'
 import PokeElement from './PokeElement/PokeElement'
-import PokeStats from './PokeElement/PokeDetails/PokeStats'
  
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=30&offset=6'
 
@@ -13,7 +12,7 @@ class PokesList extends Component {
     pokesList: [],
     clickedPoke: null,
     pokeDetails: {},
-    
+    active: false
   }
   
   fetchPokesList = () => {
@@ -32,12 +31,13 @@ class PokesList extends Component {
     return response
   }
 
-  clickedPokeHandler = (ind, pokeUrl) => {
+  clickedPokeHandler = (e, ind, pokeUrl) => {
     console.log('clicked', ind, pokeUrl)
     if (this.state.clickedPoke === ind) {
       this.setState({ clickedPoke: null })
     } else {
       this.setState({ clickedPoke: ind })
+      this.setState({ active: !this.state.active })
       this.fetchUrl(pokeUrl).then(async poke => {
         const details = await poke.json()
         this.setState({ pokeDetails: details })
@@ -56,26 +56,20 @@ class PokesList extends Component {
     if (this.state.pokesFetched) {
       pokesList = this.state.pokesList.map((poke, ind) => {
         return (
-          <div>
+          <div className={`Pokes`}>
             <PokeElement 
               key={ind}
               name={poke.name} 
-              url={poke.url} 
-              clicked={() => this.clickedPokeHandler(ind, poke.url)}
-              isClicked={this.state.clickedPoke}
-              details={this.state.pokeDetails}
+              clicked={(e) => this.clickedPokeHandler(e, ind, poke.url)}
+              clickedPoke={this.state.clickedPoke}
+              pokeDetails={this.state.pokeDetails}
               pokeInd={ind}
-              mouseEnter={this.onMouseEnter} 
-              mouseClick={this.onMouseClick}
-              showDetails={() => this.state.showDetails()}
+              active={this.state.active}
               />
-            
           </div>
         )
       })
     }
-
-    
 
    return (
      <div className='PokesList' >

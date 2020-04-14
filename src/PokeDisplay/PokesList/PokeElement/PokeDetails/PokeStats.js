@@ -19,9 +19,10 @@ class PokeStats extends Component {
     })
 
     return <div className='PokeStats' >
-        {stats}
-        Hello
-        <ul>
+        <div className='PokeStats__header'>
+          { stats.toUpperCase() }
+        </div>
+        <ul className='PokeStats__list'>
           {displayDetails}
         </ul>
       </div>
