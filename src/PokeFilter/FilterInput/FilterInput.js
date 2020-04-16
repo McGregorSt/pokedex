@@ -6,6 +6,7 @@ class FilterInput extends Component {
     return (
       <div className="FilterInput">
         <input
+          placeholder='Search for your fav Poke'
           className="FilterInput__input"
           onChange={this.props.filterPokes}
           onKeyDown={this.props.keyDown}

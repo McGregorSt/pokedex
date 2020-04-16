@@ -2,6 +2,6 @@
   height: 100px;
   background-color: #757575;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }

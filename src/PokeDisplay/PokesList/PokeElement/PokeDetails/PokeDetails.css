@@ -8,8 +8,9 @@
   border-radius: 8px;
   transform: scale(1.08);
   animation-name: scaleUp;
-  animation-duration: 0.6s;
+  animation-duration: 0.6s; 
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* padding: 20px; */
 }
 
 @keyframes scaleUp {
@@ -31,10 +32,12 @@
 }
 
 .PokeSkills {
-  height: 70%;
+  height: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: auto;
   background-color: #e0eeea;
   font-size: 20px;
   border-radius: 8px;

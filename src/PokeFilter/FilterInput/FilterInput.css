@@ -1,12 +1,31 @@
+.FilterInput {
+  width: 80%;
+}
 
 .FilterInput__input {
-  width: 120%;
+  width: 75%;
   height: 60px;
   background-color: #757575;
   border-style: none;
-  border-bottom: 2px solid #000000;
-  font-size: 40px;
+  border-bottom: 1px solid #000000;
+  font-size: 30px;
   font-weight: 100;
   outline: none;
   font-family: 'Roboto', sans-serif;
+}
+
+.FilterInput__input::placeholder {
+  color: #494949;
+  font-size: 24px;
+}
+
+@media (max-width: 800px) {
+  .FilterInput__input {
+    font-size: 24px;
+  }
+
+  .FilterInput__input::placeholder {
+    color: #494949;
+    font-size: 20px;
+  }
 }

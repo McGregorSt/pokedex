@@ -1,7 +1,3 @@
-.PokesList {
-  color: white;
-}
-
 .PokesGrid {
   display: grid;
   max-width: 80%;
@@ -12,9 +8,34 @@
   list-style: none;
 }
 .Pagination {
-  position: fixed;
-  display: block;
+  position: fixed; 
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 3px;
+}
+
+@media (max-width: 1700px) {
+  .PokesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1300px) {
+  .PokesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .PokesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .PokesGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .Pagination {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+  }
 }

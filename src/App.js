@@ -16,6 +16,30 @@ class App extends Component {
     pokeDetails: {},
   }
 
+  setPokesOnPage = (width) => {
+    switch(width) {
+      case 1600: return 8
+      case 1200: return 6
+      case 800: return 4
+      default: return
+    }
+  }
+
+  pokesOnPage = (width) => {
+    const match = window.matchMedia(`(max-width: 1700)`);
+    console.log(match)
+    // switch(width) {
+    //   case 1600: return 8
+    //   case 1200: return 6
+    //   case 800: return 4
+    //   default: return
+    // }
+    if (match) {
+
+    }
+  }
+
+
   fetchPokesList = () => {
     return this.fetchUrl(baseUrl).then(async (pokes) => {
       const pokesList = await pokes.json()
@@ -66,8 +90,33 @@ class App extends Component {
     this.setState({ currentPage: value })
   }
 
+  checkWidth = () => {
+    
+    console.log(this.state.pokesPerPage)
+    // const match = window.matchMedia(`(max-width: 1600px)`)
+    // console.log(window)
+    if (window.innerWidth < 1700) {
+      // console.log('resize')
+      this.setState({ pokesPerPage: 8 })
+    }
+    if (window.innerWidth < 1300) {
+      // console.log('resize')
+      this.setState({ pokesPerPage: 6 })
+    }
+    if (window.innerWidth < 1000) {
+      // console.log('resize')
+      this.setState({ pokesPerPage: 4 })
+    }
+    if (window.innerWidth < 1000) {
+      // console.log('resize')
+      this.setState({ pokesPerPage: 4 })
+    }
+  };
   componentDidMount() {
     this.fetchPokesList()
+
+    // this.checkWidth();
+    window.addEventListener("resize", this.checkWidth);
   }
 
   render() {

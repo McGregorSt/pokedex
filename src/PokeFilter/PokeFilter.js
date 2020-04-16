@@ -7,15 +7,13 @@ import FilterInput from './FilterInput/FilterInput'
 class PokeFilter extends Component {
   render() {
     return (
-      <div>
         <div className="PokeFilter">
           <FilterInput
             filterPokes={this.props.filterPokes}
             keyDown={this.props.keyDown}
           />
-          <FilterSearch />
+          {/* <FilterSearch /> */}
         </div>
-      </div>
     )
   }
 }
