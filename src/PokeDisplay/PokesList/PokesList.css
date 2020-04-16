@@ -8,10 +8,9 @@
   list-style: none;
 }
 .Pagination {
-  position: fixed; 
-  left: 50%;
-  transform: translate(-50%, 0);
-  bottom: 3px;
+  position: relative; 
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1700px) {
@@ -32,10 +31,5 @@
 @media (max-width: 800px) {
   .PokesGrid {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .Pagination {
-    position: relative; 
-    display: flex;
-    justify-content: center;
   }
 }
