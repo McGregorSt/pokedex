@@ -1,6 +1,6 @@
 .PokeDetails {
-  background-color: rgb(90, 80, 77);
-  color: rgb(241, 188, 52);
+  background-color: #202020;
+  color: #661f25;;
   height: 100%;
   width: 100%;
   display: flex;
@@ -8,7 +8,8 @@
   border-radius: 8px;
   transform: scale(1.08);
   animation-name: scaleUp;
-  animation-duration: 0.7s;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 @keyframes scaleUp {
@@ -19,11 +20,9 @@
     transform: scale(1.08);
   }
 }
-.active {
-  
-}
 
 .PokeName {
+  font-family: 'Bungee Inline', cursive;
   height: 30%;
   font-size: 32px;
   display: flex;
@@ -36,9 +35,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: rgb(107, 99, 97);
+  background-color: #e0eeea;
   font-size: 20px;
   border-radius: 8px;
+  font-family: 'Iceland', cursive;
 }
 
 

@@ -1,14 +1,12 @@
-.FilterInput {
-
-}
 
 .FilterInput__input {
-  width: 800px;
+  width: 120%;
   height: 60px;
-  background-color: #999;
+  background-color: #757575;
   border-style: none;
-  border-bottom: 1px solid #555;
-  font-size: 50px;
+  border-bottom: 2px solid #000000;
+  font-size: 40px;
   font-weight: 100;
   outline: none;
+  font-family: 'Roboto', sans-serif;
 }
