@@ -43,3 +43,14 @@
   border-radius: 8px;
   font-family: 'Iceland', cursive;
 }
+
+.Abs {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Abs:hover {
+  opacity: 0.5;
+}

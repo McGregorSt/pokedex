@@ -38,7 +38,7 @@ class PokeDetails extends Component {
 
     let pokeDetails = details.map((detail, ind) => {
       return (
-        <div key={detail} onClick={(e) => this.onDetailsClick(e, ind)}>
+        <div className='Abs' key={detail} onClick={(e) => this.onDetailsClick(e, ind)}>
           {detail.toUpperCase()}
         </div>
       )
@@ -47,10 +47,12 @@ class PokeDetails extends Component {
     let pokeStats = ''
     if (this.state.showDetails) {
       pokeStats = (
-        <PokeStats
-          statsClicked={this.state.statsClicked}
-          displayDetails={this.state.detailsToDisplay}
-        />
+        <div>
+          <PokeStats
+            statsClicked={this.state.statsClicked}
+            displayDetails={this.state.detailsToDisplay}
+          />
+        </div>
       )
     }
 

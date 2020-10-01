@@ -1,5 +1,5 @@
 .PokeStats {
-  height: 90%;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

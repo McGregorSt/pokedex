@@ -27,7 +27,7 @@ class PokesList extends Component {
     }
 
     return (
-      <div className="PokesList">
+      <div className="PokesList" onClick={this.props.clicked}>
         <ul className="PokesGrid">{pokesList}</ul>
         <div className="Pagination">
           <Pagination

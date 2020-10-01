@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .PokeElm p {

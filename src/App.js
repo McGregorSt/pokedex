@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   clickedPokeHandler = (e, ind, pokeUrl) => {
+    e.stopPropagation();
     if (this.state.clickedPoke === ind) {
       this.setState({ clickedPoke: null })
     } else {
@@ -43,6 +44,10 @@ class App extends Component {
         this.setState({ pokeDetails: details })
       })
     }
+  }
+
+  onClickedBackgroundHandler = (e) => {
+    this.setState({ clickedPoke: null })
   }
 
   filterPokes = (e) => {
@@ -110,6 +115,7 @@ class App extends Component {
           pokeDetails={this.state.pokeDetails}
           countPages={countPages}
           paginationChange={this.onPaginationChangeHandler}
+          clickedBackground={this.onClickedBackgroundHandler}
         />
       </div>
     )

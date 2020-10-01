@@ -19,6 +19,7 @@ class PokeDisplay extends Component {
         active={this.props.active}
         countPages={this.props.countPages}
         paginationChange={this.props.paginationChange}
+        clickedBackground={this.props.clicked}
       />
     )
     return <div>{pokesList}</div>
